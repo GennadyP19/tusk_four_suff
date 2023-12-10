@@ -36,7 +36,7 @@ do
 	if [[ $marker == 0 ]] &&  [[ "$var" != -* ]] && [[ $var == *.* ]] 
 	then	
 		old_name=""
-		new_name=${var%.*}${suff}.${var#*.}
+		new_name=${var%.*}${suff}.${var##*.}
 		
 		if [[ $markerd == 0 ]] 
 		then
