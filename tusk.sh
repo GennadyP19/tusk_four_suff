@@ -29,7 +29,6 @@ do
 	fi
 done
 
-<<<<<<< HEAD
 if [[ $markerh == 1 ]] 
 then
 	echo  формат ввода: tusk.sh [-d] [-v] [-h] файл1 [файл2] ... суффикс
@@ -40,7 +39,6 @@ then
 	
 	exit 0
 fi
-=======
 
 marker=0
 
@@ -53,7 +51,7 @@ do
 		
 		if [[ $markerd == 0 ]] 
 		then
-			echo $var $new_name
+			mv $var $new_name
 		fi
 		
 		if [[ $markerd == 1 ]] 
@@ -70,4 +68,4 @@ do
 		marker=1
 	fi
 done
->>>>>>> testing_main_function
+
