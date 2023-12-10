@@ -29,6 +29,7 @@ do
 	fi
 done
 
+<<<<<<< HEAD
 if [[ $markerh == 1 ]] 
 then
 	echo  формат ввода: tusk.sh [-d] [-v] [-h] файл1 [файл2] ... суффикс
@@ -39,3 +40,34 @@ then
 	
 	exit 0
 fi
+=======
+
+marker=0
+
+for var in $@
+do
+	if [[ $marker == 0 ]] &&  [[ "$var" != -* ]] && [[ $var == *.* ]] 
+	then	
+		old_name=""
+		new_name=${var%.*}${suff}.${var##*.}
+		
+		if [[ $markerd == 0 ]] 
+		then
+			echo $var $new_name
+		fi
+		
+		if [[ $markerd == 1 ]] 
+		then
+			old_name=$var
+		fi
+		
+		if [[ $markerv == 1 ]] || [[ $markerd == 1 ]]  
+		then
+			echo $old_name $new_name
+		fi
+	elif [[ $var == -- ]]
+	then
+		marker=1
+	fi
+done
+>>>>>>> testing_main_function
